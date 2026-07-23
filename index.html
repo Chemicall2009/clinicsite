@@ -1,8 +1,9 @@
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
     <title>Медицинский центр семейного здоровья | Ахтырский</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -33,6 +34,8 @@
         html {
             scroll-behavior: smooth;
             -webkit-tap-highlight-color: transparent;
+            overflow-x: hidden;
+            width: 100%;
         }
 
         body {
@@ -43,6 +46,17 @@
             overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
             width: 100%;
+            max-width: 100%;
+        }
+
+        * {
+            max-width: 100%;
+            box-sizing: border-box;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
         }
 
         /* ===== NAV ===== */
@@ -82,7 +96,6 @@
             height: 42px;
             width: auto;
             display: block;
-            flex-shrink: 0;
         }
 
         .nav-links {
@@ -180,11 +193,6 @@
             box-shadow: 0 12px 40px rgba(78, 159, 86, 0.55);
         }
 
-        .fixed-call svg {
-            width: 28px;
-            height: 28px;
-        }
-
         /* ===== HERO ===== */
         .hero {
             min-height: 100vh;
@@ -228,7 +236,6 @@
             color: var(--text);
             letter-spacing: -0.02em;
             word-wrap: break-word;
-            hyphens: auto;
         }
 
         .hero-content h1 span {
@@ -285,8 +292,6 @@
             box-shadow: 0 8px 28px rgba(78, 159, 86, 0.3);
             font-size: 1.05rem;
             touch-action: manipulation;
-            border: none;
-            cursor: pointer;
         }
 
         .btn-primary:hover {
@@ -313,7 +318,6 @@
             gap: 0.75rem;
             font-size: 1.05rem;
             touch-action: manipulation;
-            cursor: pointer;
         }
 
         .btn-secondary:hover {
@@ -332,7 +336,6 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            width: 100%;
         }
 
         .hero-logo-wrapper {
@@ -342,13 +345,11 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            flex-direction: column;
         }
 
         .hero-logo-wrapper img {
             width: 100%;
             max-width: 400px;
-            height: auto;
             filter: drop-shadow(0 25px 50px rgba(78, 159, 86, 0.2));
             animation: float 6s ease-in-out infinite;
             position: relative;
@@ -430,7 +431,6 @@
             display: flex;
             align-items: center;
             gap: 12px;
-            flex-wrap: wrap;
         }
 
         .trust-stars .stars {
@@ -524,7 +524,6 @@
         .section-title {
             text-align: center;
             margin-bottom: 4rem;
-            padding: 0 0.5rem;
         }
 
         .section-title h2 {
@@ -717,7 +716,7 @@
             gap: 1rem;
         }
 
-        /* ===== APPOINTMENT (SIMPLIFIED) ===== */
+        /* ===== APPOINTMENT ===== */
         .appointment {
             padding: 6rem 2rem;
             background: var(--bg-light);
@@ -780,7 +779,6 @@
             height: 120px;
             display: block;
             border-radius: 8px;
-            max-width: 100%;
         }
 
         .qr-code span {
@@ -1014,7 +1012,6 @@
 
         .footer-logo img {
             height: 40px;
-            flex-shrink: 0;
         }
 
         .footer-section h4 {
@@ -1030,6 +1027,7 @@
             line-height: 2;
             display: block;
             transition: color var(--transition);
+            word-break: break-word;
         }
 
         .footer-section a:hover {
@@ -1062,7 +1060,7 @@
         }
 
         /* ============================================================ */
-        /* ===== РЕСПОНСИВ ДЛЯ МОБИЛЬНЫХ УСТРОЙСТВ (ВЕРТИКАЛЬНЫЙ РЕЖИМ) ===== */
+        /* ===== RESPONSIVE ===== */
         /* ============================================================ */
 
         @media (max-width: 1024px) {
@@ -1132,30 +1130,32 @@
         }
 
         @media (max-width: 768px) {
-            /* ---- НАВИГАЦИЯ ---- */
+            /* ===== NAV ===== */
             .nav-container {
                 padding: 0.6rem 1rem;
                 flex-wrap: nowrap;
             }
-
+            
             .logo {
                 font-size: 1rem;
                 gap: 8px;
                 max-width: 60%;
             }
-
+            
             .logo img {
                 height: 32px;
+                flex-shrink: 0;
             }
-
+            
             .phone-btn {
                 display: none;
             }
-
+            
             .mobile-menu-btn {
                 display: block;
                 font-size: 1.5rem;
                 padding: 0.25rem;
+                flex-shrink: 0;
             }
 
             .nav-links {
@@ -1168,66 +1168,1174 @@
                 height: 54px;
                 bottom: 16px;
                 right: 16px;
+                font-size: 1.6rem;
             }
-
+            
             .fixed-call svg {
                 width: 24px;
                 height: 24px;
             }
 
-            /* ---- HERO ---- */
+            /* ===== HERO ===== */
             .hero {
                 padding: 6rem 1rem 3rem;
                 overflow-x: hidden;
             }
-
+            
             .hero-container {
+                grid-template-columns: 1fr;
                 gap: 1.5rem;
                 padding: 0;
                 width: 100%;
             }
-
+            
             .hero-content {
                 width: 100%;
                 padding: 0 0.25rem;
             }
-
+            
             .hero-content h1 {
-                font-size: 2.4rem;
+                font-size: 2rem;
                 word-wrap: break-word;
                 hyphens: auto;
             }
-
+            
             .hero-content p {
                 font-size: 1rem;
                 padding: 0 0.25rem;
             }
-
+            
             .hero-features-list {
                 padding: 0 0.25rem;
             }
-
+            
             .hero-features-list li {
                 font-size: 0.9rem;
                 gap: 8px;
             }
-
-            .hero-features-list li svg {
-                width: 18px;
-                height: 18px;
-            }
-
+            
             .hero-buttons {
                 flex-direction: column;
                 gap: 0.75rem;
                 width: 100%;
                 padding: 0 0.25rem;
             }
-
+            
             .hero-buttons .btn-primary,
             .hero-buttons .btn-secondary {
                 width: 100%;
                 justify-content: center;
                 padding: 0.9rem 1.5rem;
                 font-size: 0.95rem;
-                text-align:
+                text-align: center;
+                box-sizing: border-box;
+            }
+            
+            .hero-visual {
+                width: 100%;
+                padding: 0 0.25rem;
+            }
+            
+            .hero-logo-wrapper {
+                max-width: 100%;
+            }
+            
+            .hero-logo-wrapper img {
+                max-width: 220px;
+                height: auto;
+            }
+            
+            .hero-card {
+                position: relative;
+                bottom: 0;
+                right: 0;
+                margin: 1rem auto 0;
+                min-width: unset;
+                width: 100%;
+                max-width: 300px;
+                padding: 1rem 1.25rem;
+                box-sizing: border-box;
+            }
+            
+            .hero-card-item {
+                font-size: 0.85rem;
+                gap: 8px;
+            }
+            
+            .hero-card-item svg {
+                width: 16px;
+                height: 16px;
+                flex-shrink: 0;
+            }
+
+            /* ===== TRUST BADGE ===== */
+            .trust-badge {
+                padding: 2rem 1rem;
+            }
+            
+            .trust-badge .container {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                gap: 1.5rem;
+                width: 100%;
+            }
+            
+            .trust-stars {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 8px;
+            }
+            
+            .trust-stars .stars {
+                font-size: 1.2rem;
+            }
+            
+            .trust-stars span {
+                font-size: 0.9rem;
+            }
+            
+            .trust-items {
+                justify-content: center;
+                gap: 1rem 1.5rem;
+                padding: 0;
+                width: 100%;
+            }
+            
+            .trust-items li {
+                font-size: 0.85rem;
+                gap: 6px;
+            }
+            
+            .trust-items li svg {
+                width: 16px;
+                height: 16px;
+                flex-shrink: 0;
+            }
+
+            /* ===== STATS ===== */
+            .stats {
+                padding: 3rem 1rem;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 0.75rem;
+                padding: 0;
+            }
+            
+            .stat-item {
+                padding: 1.25rem 0.75rem;
+                box-sizing: border-box;
+            }
+            
+            .stat-number {
+                font-size: 1.8rem;
+            }
+            
+            .stat-label {
+                font-size: 0.85rem;
+            }
+
+            /* ===== FEATURES ===== */
+            .features {
+                padding: 4rem 1rem;
+            }
+            
+            .section-title {
+                margin-bottom: 2.5rem;
+                padding: 0 0.25rem;
+            }
+            
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+            
+            .section-title p {
+                font-size: 1rem;
+                padding: 0 0.5rem;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 1rem;
+                padding: 0;
+            }
+            
+            .feature-card {
+                padding: 1.5rem 1rem;
+                box-sizing: border-box;
+            }
+            
+            .feature-icon {
+                width: 56px;
+                height: 56px;
+                margin: 0 auto 1rem;
+            }
+            
+            .feature-icon svg {
+                width: 28px;
+                height: 28px;
+            }
+            
+            .feature-card h3 {
+                font-size: 1.05rem;
+            }
+            
+            .feature-card p {
+                font-size: 0.85rem;
+            }
+
+            /* ===== DOCTORS ===== */
+            .doctors {
+                padding: 4rem 1rem;
+            }
+            
+            .doctors-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 0.75rem;
+                padding: 0;
+            }
+            
+            .doctor-specialty {
+                padding: 1.25rem 0.75rem;
+                box-sizing: border-box;
+            }
+            
+            .doctor-specialty .icon {
+                font-size: 2.2rem;
+                margin-bottom: 0.5rem;
+            }
+            
+            .doctor-specialty h4 {
+                font-size: 1rem;
+            }
+            
+            .doctor-specialty p {
+                font-size: 0.8rem;
+            }
+
+            /* ===== SERVICES ===== */
+            .services {
+                padding: 4rem 1rem;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+                padding: 0;
+            }
+            
+            .service-card {
+                padding: 1.5rem 1.25rem;
+                box-sizing: border-box;
+            }
+            
+            .service-icon {
+                font-size: 2.2rem;
+            }
+            
+            .service-card h3 {
+                font-size: 1.2rem;
+            }
+            
+            .service-card p {
+                font-size: 0.9rem;
+            }
+
+            /* ===== APPOINTMENT ===== */
+            .appointment {
+                padding: 4rem 1rem;
+            }
+            
+            .appointment-wrapper {
+                padding: 1.5rem 1rem;
+                box-sizing: border-box;
+                width: 100%;
+            }
+            
+            .appointment-wrapper h2 {
+                font-size: 1.6rem;
+            }
+            
+            .appointment-wrapper p {
+                font-size: 1rem;
+            }
+            
+            .appointment-actions {
+                flex-direction: column;
+                gap: 1rem;
+                width: 100%;
+            }
+            
+            .appointment-actions .btn-primary {
+                width: 100%;
+                justify-content: center;
+                padding: 1rem 1.5rem;
+                font-size: 1rem;
+                box-sizing: border-box;
+            }
+            
+            .qr-code {
+                width: 100%;
+                max-width: 200px;
+                margin: 0 auto;
+                padding: 0.75rem 1rem 1rem;
+                box-sizing: border-box;
+            }
+            
+            .qr-code img {
+                width: 80px;
+                height: 80px;
+            }
+            
+            .qr-code span {
+                font-size: 0.8rem;
+            }
+
+            /* ===== LICENSE ===== */
+            .license {
+                padding: 3rem 1rem;
+            }
+            
+            .license-grid {
+                padding: 1.5rem 1rem;
+                grid-template-columns: 1fr;
+                gap: 1rem;
+                box-sizing: border-box;
+                width: 100%;
+            }
+            
+            .license-item {
+                font-size: 0.9rem;
+                gap: 12px;
+            }
+            
+            .license-item svg {
+                width: 24px;
+                height: 24px;
+                flex-shrink: 0;
+            }
+
+            /* ===== CONTACT ===== */
+            .contact {
+                padding: 4rem 1rem;
+            }
+            
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                padding: 0;
+            }
+            
+            .contact-info h3 {
+                font-size: 1.5rem;
+                margin-bottom: 1.5rem;
+            }
+            
+            .contact-item {
+                gap: 1rem;
+                margin-bottom: 1.5rem;
+            }
+            
+            .contact-icon {
+                width: 44px;
+                height: 44px;
+                flex-shrink: 0;
+            }
+            
+            .contact-icon svg {
+                width: 22px;
+                height: 22px;
+            }
+            
+            .contact-details h4 {
+                font-size: 1rem;
+            }
+            
+            .contact-details p,
+            .contact-details a {
+                font-size: 0.9rem;
+                word-break: break-word;
+            }
+            
+            .schedule-row {
+                padding: 0.4rem 0;
+                font-size: 0.9rem;
+            }
+            
+            .map-container {
+                min-height: 250px;
+                width: 100%;
+                overflow: hidden;
+            }
+            
+            .map-container iframe {
+                min-height: 250px;
+                width: 100%;
+            }
+
+            /* ===== CTA ===== */
+            .cta {
+                padding: 3rem 1rem;
+            }
+            
+            .cta h2 {
+                font-size: 1.6rem;
+            }
+            
+            .cta p {
+                font-size: 1rem;
+            }
+            
+            .cta-btn {
+                padding: 0.9rem 1.5rem;
+                font-size: 0.95rem;
+                width: 100%;
+                box-sizing: border-box;
+                text-align: center;
+            }
+
+            /* ===== FOOTER ===== */
+            footer {
+                padding: 3rem 1rem 1rem;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                padding: 0;
+            }
+            
+            .footer-logo {
+                font-size: 1.2rem;
+                gap: 10px;
+            }
+            
+            .footer-logo img {
+                height: 32px;
+            }
+            
+            .footer-section h4 {
+                font-size: 1rem;
+                margin-bottom: 0.75rem;
+            }
+            
+            .footer-section p,
+            .footer-section a {
+                font-size: 0.9rem;
+                line-height: 1.8;
+            }
+            
+            .footer-bottom {
+                font-size: 0.8rem;
+                padding-top: 1.5rem;
+            }
+            
+            .easter-egg {
+                font-size: 0.5rem;
+                padding: 0.5rem;
+            }
+
+            /* ===== ОБЩИЕ ФИКСЫ ===== */
+            .container {
+                padding: 0 !important;
+                width: 100%;
+                max-width: 100%;
+                overflow-x: hidden;
+            }
+            
+            body {
+                overflow-x: hidden;
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-content h1 {
+                font-size: 1.7rem;
+            }
+            
+            .hero-content p {
+                font-size: 0.9rem;
+            }
+            
+            .hero-buttons .btn-primary,
+            .hero-buttons .btn-secondary {
+                font-size: 0.85rem;
+                padding: 0.75rem 1rem;
+            }
+            
+            .stats-grid {
+                gap: 0.5rem;
+            }
+            
+            .stat-item {
+                padding: 1rem 0.5rem;
+            }
+            
+            .stat-number {
+                font-size: 1.5rem;
+            }
+            
+            .stat-label {
+                font-size: 0.75rem;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 0.75rem;
+            }
+            
+            .feature-card {
+                padding: 1rem 0.75rem;
+            }
+            
+            .feature-card h3 {
+                font-size: 0.9rem;
+            }
+            
+            .feature-card p {
+                font-size: 0.75rem;
+            }
+            
+            .doctors-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 0.5rem;
+            }
+            
+            .doctor-specialty {
+                padding: 1rem 0.5rem;
+            }
+            
+            .doctor-specialty .icon {
+                font-size: 1.8rem;
+            }
+            
+            .doctor-specialty h4 {
+                font-size: 0.85rem;
+            }
+            
+            .doctor-specialty p {
+                font-size: 0.7rem;
+            }
+            
+            .service-card {
+                padding: 1.25rem 1rem;
+            }
+            
+            .service-card h3 {
+                font-size: 1rem;
+            }
+            
+            .service-card p {
+                font-size: 0.85rem;
+            }
+            
+            .appointment-wrapper {
+                padding: 1rem 0.75rem;
+            }
+            
+            .appointment-wrapper h2 {
+                font-size: 1.3rem;
+            }
+            
+            .appointment-wrapper p {
+                font-size: 0.9rem;
+            }
+            
+            .contact-item {
+                flex-direction: row;
+                gap: 0.75rem;
+            }
+            
+            .contact-icon {
+                width: 36px;
+                height: 36px;
+            }
+            
+            .contact-icon svg {
+                width: 18px;
+                height: 18px;
+            }
+            
+            .contact-details p,
+            .contact-details a {
+                font-size: 0.8rem;
+            }
+            
+            .schedule-row {
+                font-size: 0.8rem;
+                padding: 0.3rem 0;
+            }
+            
+            .cta h2 {
+                font-size: 1.3rem;
+            }
+            
+            .cta p {
+                font-size: 0.9rem;
+            }
+            
+            .cta-btn {
+                font-size: 0.85rem;
+                padding: 0.75rem 1rem;
+            }
+        }
+
+        /* ===== REDUCED MOTION ===== */
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===== NAV ===== -->
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <img src="Logo.png" alt="Семейное Здоровье">
+                Семейное Здоровье
+            </a>
+            <ul class="nav-links">
+                <li><a href="#features">Преимущества</a></li>
+                <li><a href="#doctors">Врачи</a></li>
+                <li><a href="#services">Услуги</a></li>
+                <li><a href="#appointment">Запись</a></li>
+                <li><a href="#contact">Контакты</a></li>
+            </ul>
+            <a href="tel:+79891954449" class="phone-btn">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.574 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                Позвонить
+            </a>
+            <button class="mobile-menu-btn" aria-label="Меню">☰</button>
+        </div>
+    </nav>
+
+    <!-- ===== FIXED CALL BTN (mobile) ===== -->
+    <a href="tel:+79891954449" class="fixed-call" aria-label="Позвонить">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.574 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    </a>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1>Забота о здоровье <span>всей семьи</span></h1>
+                <p>Современный медицинский центр в Ахтырском. Приём взрослых и детей, опытные специалисты, комфортная атмосфера.</p>
+                <ul class="hero-features-list">
+                    <li>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="#4E9F56" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        Приём взрослых и детей
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="#4E9F56" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        Современная диагностика
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="#4E9F56" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        Опытные специалисты
+                    </li>
+                </ul>
+                <div class="hero-buttons">
+                    <a href="#appointment" class="btn-primary">
+                        Записаться на приём
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                    </a>
+                    <a href="tel:+79891954449" class="btn-secondary">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.574 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                        +7 (989) 195-44-49
+                    </a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="hero-logo-wrapper">
+                    <img src="Logo.png" alt="Семейное Здоровье">
+                    <div class="hero-card">
+                        <div class="hero-card-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#4E9F56" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                            Работаем с 8:00 до 17:00
+                        </div>
+                        <div class="hero-card-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#4E9F56" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                            Приём без очередей
+                        </div>
+                        <div class="hero-card-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#4E9F56" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                            Индивидуальный подход
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== TRUST BADGE ===== -->
+    <section class="trust-badge">
+        <div class="container">
+            <div class="trust-stars">
+                <span class="stars">★★★★★</span>
+                <span>Более 15 лет заботимся о здоровье</span>
+            </div>
+            <ul class="trust-items">
+                <li>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#4E9F56" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                    Лицензированные специалисты
+                </li>
+                <li>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#4E9F56" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                    Современное оборудование
+                </li>
+                <li>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#4E9F56" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                    Семейный подход
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- ===== STATS ===== -->
+    <section class="stats">
+        <div class="stats-grid">
+            <div class="stat-item">
+                <div class="stat-number">15+</div>
+                <div class="stat-label">лет опыта</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">5000+</div>
+                <div class="stat-label">пациентов</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">6</div>
+                <div class="stat-label">дней в неделю</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">100%</div>
+                <div class="stat-label">индивидуальный подход</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FEATURES ===== -->
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-title">
+                <h2>Почему выбирают нас</h2>
+                <p>Мы создаём комфортные условия для каждого пациента</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+                    </div>
+                    <h3>Опытные врачи</h3>
+                    <p>Квалифицированные специалисты с многолетним стажем</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+                    </div>
+                    <h3>Современное оборудование</h3>
+                    <p>Передовые технологии диагностики и лечения</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    </div>
+                    <h3>Удобный график</h3>
+                    <p>Работаем 6 дней в неделю с 8:00 до 17:00</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                    </div>
+                    <h3>Индивидуальный подход</h3>
+                    <p>Внимание к каждому пациенту и забота о вашем здоровье</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== DOCTORS ===== -->
+    <section class="doctors" id="doctors">
+        <div class="container">
+            <div class="section-title">
+                <h2>Наши специалисты</h2>
+                <p>Врачи высшей категории по разным направлениям</p>
+            </div>
+            <div class="doctors-grid">
+                <div class="doctor-specialty">
+                    <span class="icon">👨‍⚕️</span>
+                    <h4>Терапевт</h4>
+                    <p>Диагностика и лечение внутренних заболеваний</p>
+                </div>
+                <div class="doctor-specialty">
+                    <span class="icon">👶</span>
+                    <h4>Педиатр</h4>
+                    <p>Детское здоровье, вакцинация, развитие</p>
+                </div>
+                <div class="doctor-specialty">
+                    <span class="icon">❤️</span>
+                    <h4>Кардиолог</h4>
+                    <p>Сердечно-сосудистая система</p>
+                </div>
+                <div class="doctor-specialty">
+                    <span class="icon">🤰</span>
+                    <h4>Гинеколог</h4>
+                    <p>Женское здоровье, планирование</p>
+                </div>
+                <div class="doctor-specialty">
+                    <span class="icon">🧬</span>
+                    <h4>Лаборант</h4>
+                    <p>Анализы и инструментальная диагностика</p>
+                </div>
+                <div class="doctor-specialty">
+                    <span class="icon">🧠</span>
+                    <h4>Невролог</h4>
+                    <p>Заболевания нервной системы</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SERVICES ===== -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Наши услуги</h2>
+                <p>Комплексная медицинская помощь для всей семьи</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🩺</div>
+                    <h3>Терапия</h3>
+                    <p>Диагностика и лечение общих заболеваний, профилактические осмотры</p>
+                    <a href="#appointment" class="service-link">Записаться →</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">👶</div>
+                    <h3>Педиатрия</h3>
+                    <p>Наблюдение за здоровьем детей, вакцинация, консультации</p>
+                    <a href="#appointment" class="service-link">Записаться →</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🦷</div>
+                    <h3>Стоматология</h3>
+                    <p>Лечение зубов, профилактика, профессиональная чистка</p>
+                    <a href="#appointment" class="service-link">Записаться →</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🧬</div>
+                    <h3>Лабораторная диагностика</h3>
+                    <p>Анализы крови, мочи и другие исследования</p>
+                    <a href="#appointment" class="service-link">Записаться →</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">❤️</div>
+                    <h3>Кардиология</h3>
+                    <p>Диагностика и лечение сердечно-сосудистых заболеваний</p>
+                    <a href="#appointment" class="service-link">Записаться →</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🤰</div>
+                    <h3>Гинекология</h3>
+                    <p>Женское здоровье, планирование беременности, наблюдение</p>
+                    <a href="#appointment" class="service-link">Записаться →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== APPOINTMENT ===== -->
+    <section class="appointment" id="appointment">
+        <div class="container">
+            <div class="appointment-wrapper">
+                <h2>📞 Запись на приём</h2>
+                <p>Позвоните нам, и мы подберём удобное время для вашего визита</p>
+                <div class="appointment-actions">
+                    <a href="tel:+79891954449" class="btn-primary">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.574 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                        Позвонить
+                    </a>
+                    <div class="qr-code">
+                        <img src="qr-code.png" alt="QR код для звонка">
+                        <span>Наведите для звонка</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== LICENSE ===== -->
+    <section class="license">
+        <div class="license-grid">
+            <div class="license-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#4E9F56" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+                Лицензированная медицинская деятельность
+            </div>
+            <div class="license-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#4E9F56" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+                Квалифицированные специалисты
+            </div>
+            <div class="license-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#4E9F56" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+                Соблюдение медицинских стандартов
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CONTACT ===== -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Контакты</h2>
+                <p>Мы всегда рады помочь вам</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Как нас найти</h3>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Адрес</h4>
+                            <p>ул. Островского, 32<br>п. г. т. Ахтырский</p>
+                            <a href="https://yandex.ru/maps/-/CTVrASYr" target="_blank">Построить маршрут →</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.574 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Телефон</h4>
+                            <p><a href="tel:+79891954449">+7 (989) 195-44-49</a></p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                        </div>
+                        <div class="contact-details">
+                            <h4>График работы</h4>
+                            <div class="schedule-table">
+                                <div class="schedule-row">
+                                    <span class="day">Понедельник</span>
+                                    <span class="time">08:00–17:00</span>
+                                </div>
+                                <div class="schedule-row">
+                                    <span class="day">Вторник</span>
+                                    <span class="time">08:00–17:00</span>
+                                </div>
+                                <div class="schedule-row">
+                                    <span class="day">Среда</span>
+                                    <span class="time">08:00–17:00</span>
+                                </div>
+                                <div class="schedule-row">
+                                    <span class="day">Четверг</span>
+                                    <span class="time">08:00–17:00</span>
+                                </div>
+                                <div class="schedule-row">
+                                    <span class="day">Пятница</span>
+                                    <span class="time">08:00–17:00</span>
+                                </div>
+                                <div class="schedule-row">
+                                    <span class="day">Суббота</span>
+                                    <span class="time">08:00–17:00</span>
+                                </div>
+                                <div class="schedule-row">
+                                    <span class="day">Воскресенье</span>
+                                    <span class="time weekend">Выходной</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="map-container">
+                    <iframe
+                        src="https://yandex.ru/map-widget/v1/?ll=38.8583,44.8167&z=16&pt=38.8583,44.8167,pm3gnm"
+                        loading="lazy"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CTA ===== -->
+    <section class="cta">
+        <div class="container">
+            <h2>Заботьтесь о здоровье вместе с нами</h2>
+            <p>Запишитесь на приём прямо сейчас</p>
+            <a href="tel:+79891954449" class="cta-btn">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:middle;margin-right:10px;"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.574 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                +7 (989) 195-44-49
+            </a>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <div class="footer-logo">
+                    <img src="Logo.png" alt="Семейное Здоровье">
+                    Семейное Здоровье
+                </div>
+                <p>Современный медицинский центр для всей семьи в Ахтырском</p>
+            </div>
+            <div class="footer-section">
+                <h4>Контакты</h4>
+                <p>📍 ул. Островского, 32</p>
+                <p><a href="tel:+79891954449">+7 (989) 195-44-49</a></p>
+            </div>
+            <div class="footer-section">
+                <h4>Режим работы</h4>
+                <p>Пн–Сб: 08:00–17:00</p>
+                <p>Вс: Выходной</p>
+            </div>
+        </div>
+
+        <div class="easter-egg">
+            дизайн страницы elbrus@GAS 2026 · chemicall2009@gmail.com - +7 918 9404009
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 Медицинский центр семейного здоровья. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <!-- ===== SCRIPTS ===== -->
+    <script>
+        // Intersection Observer
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -40px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.feature-card, .service-card').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Smooth anchor with offset
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href === '#') return;
+                e.preventDefault();
+                const target = document.querySelector(href);
+                if (target) {
+                    const navHeight = document.querySelector('nav').offsetHeight;
+                    const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - navHeight - 20;
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Nav shadow on scroll
+        const nav = document.querySelector('nav');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                nav.style.boxShadow = '0 2px 30px rgba(78, 159, 86, 0.12)';
+            } else {
+                nav.style.boxShadow = '0 2px 20px rgba(78, 159, 86, 0.08)';
+            }
+        }, { passive: true });
+
+        // Mobile menu toggle
+        const menuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+
+        menuBtn.addEventListener('click', function() {
+            const isOpen = navLinks.style.display === 'flex';
+            navLinks.style.display = isOpen ? 'none' : 'flex';
+            if (!isOpen) {
+                navLinks.style.flexDirection = 'column';
+                navLinks.style.position = 'absolute';
+                navLinks.style.top = '70px';
+                navLinks.style.left = '0';
+                navLinks.style.right = '0';
+                navLinks.style.background = 'white';
+                navLinks.style.padding = '2rem';
+                navLinks.style.gap = '1.5rem';
+                navLinks.style.boxShadow = '0 20px 40px rgba(0,0,0,0.08)';
+                navLinks.style.borderBottom = '1px solid var(--border)';
+            }
+            this.setAttribute('aria-expanded', !isOpen);
+        });
+
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 768) {
+                    navLinks.style.display = 'none';
+                    menuBtn.setAttribute('aria-expanded', 'false');
+                }
+            });
+        });
+
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+                navLinks.style.display = 'flex';
+                navLinks.style.flexDirection = 'row';
+                navLinks.style.position = 'static';
+                navLinks.style.padding = '0';
+                navLinks.style.boxShadow = 'none';
+                navLinks.style.borderBottom = 'none';
+            } else {
+                navLinks.style.display = 'none';
+            }
+        });
+
+        // Lazy load map on scroll
+        const mapContainer = document.querySelector('.map-container iframe');
+        if ('IntersectionObserver' in window && mapContainer) {
+            const mapObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const iframe = entry.target;
+                        const src = iframe.getAttribute('src');
+                        if (src && !iframe.getAttribute('data-loaded')) {
+                            iframe.setAttribute('data-loaded', 'true');
+                        }
+                    }
+                });
+            }, { threshold: 0.1 });
+            mapObserver.observe(mapContainer);
+        }
+
+        // Handle prefers-reduced-motion
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+        if (prefersReducedMotion.matches) {
+            document.querySelectorAll('.feature-card, .service-card').forEach(el => {
+                el.style.transition = 'none';
+                el.style.opacity = '1';
+                el.style.transform = 'none';
+            });
+        }
+    </script>
+</body>
+</html>
